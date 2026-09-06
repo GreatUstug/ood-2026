@@ -1,16 +1,30 @@
-#include <iostream>
+#include "Duck/DecoyDuck.h"
+#include "Duck/MallardDuck.h"
+#include "Duck/ModelDuck.h"
+#include "Duck/RedheadDuck.h"
+#include "Duck/RubberDuck.h"
+#include "DuckFunctions.h"
+#include <cstdlib>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+int main()
+{
+    MallardDuck mallardDuck;
+    PlayWithDuck(mallardDuck);
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
+    RedheadDuck redheadDuck;
+    PlayWithDuck(redheadDuck);
 
-    return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
+    RubberDuck rubberDuck;
+    PlayWithDuck(rubberDuck);
+
+    DecoyDuck decoyDuck;
+    PlayWithDuck(decoyDuck);
+
+    ModelDuck modelDuck;
+    PlayWithDuck(modelDuck);
+
+    modelDuck.SetFlyBehavior(std::make_unique<FlyWithWings>());
+    PlayWithDuck(modelDuck);
+
+    return EXIT_SUCCESS;
 }
