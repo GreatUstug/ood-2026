@@ -1,5 +1,5 @@
 #include "Duck/DecoyDuck.h"
-#include "Duck/MallardDuck.h"
+#include "Duck/MallarDuck.h"
 #include "Duck/ModelDuck.h"
 #include "Duck/RedheadDuck.h"
 #include "Duck/RubberDuck.h"

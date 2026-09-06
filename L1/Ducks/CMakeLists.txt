@@ -10,4 +10,11 @@ add_executable(Ducks main.cpp
         Duck/MallarDuck.h
         Duck/ModelDuck.h
         Duck/RedheadDuck.h
-        Duck/RubberDuck.h)
+        Duck/RubberDuck.h
+        Duck/Fly/FlyNoWay.h
+        Duck/Fly/FlyWithWings.h
+        Duck/Fly/IFlyBehavior.h
+        Duck/Quack/IQuackBehavior.h
+        Duck/Quack/MuteQuackBehavior.h
+        Duck/Quack/QuackBehavior.h
+        Duck/Quack/SqueakBehavior.h)
