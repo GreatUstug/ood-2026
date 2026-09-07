@@ -12,6 +12,7 @@ public:
         m_flightCount++;
         std::cout << "I'm flying with wings!!" << std::endl;
     }
+	bool CanFly() const override {return true;}
     int GetFlightCount() const override
     {
         return m_flightCount;

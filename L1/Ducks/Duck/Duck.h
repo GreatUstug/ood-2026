@@ -36,8 +36,9 @@ public:
 
     void Fly()
     {
-        CheckAndQuack();
         m_flyBehavior->Fly();
+    	PrintFlyCount();
+    	CheckAndQuack();
     }
 
     void Dance()
@@ -55,7 +56,11 @@ public:
     virtual ~Duck() = default;
 
 private:
-    void CheckAndQuack()
+	void PrintFlyCount() const
+	{
+		std::cout << "Fly count: " << m_flyBehavior->GetFlightCount() << std::endl;
+	}
+    void CheckAndQuack() const
     {
         int flightCount = m_flyBehavior->GetFlightCount();
         if (flightCount != 0 && flightCount % FLIGHT_DIVIDER == 0) {

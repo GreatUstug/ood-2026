@@ -5,7 +5,7 @@ struct IFlyBehavior
 {
     virtual ~IFlyBehavior(){};
     virtual void Fly() = 0;
-    virtual bool CanFly() const {return true;}
+    virtual bool CanFly() const {}
     virtual int GetFlightCount() const {return 0;}
 };
 

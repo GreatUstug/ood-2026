@@ -21,4 +21,7 @@ add_executable(Ducks main.cpp
         Duck/Dance/IDanceBehavior.h
         Duck/Dance/DanceWaltz.h
         Duck/Dance/DanceMinuet.h
-        Duck/Dance/DanceNoWay.h)
+        Duck/Dance/DanceNoWay.h
+        Mocks/MockFlyBehavior.h
+        DuckTest.cpp)
+
