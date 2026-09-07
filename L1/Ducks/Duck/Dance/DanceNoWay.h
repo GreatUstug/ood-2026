@@ -8,7 +8,6 @@
 class DanceNoWay : public IDanceBehavior {
 public:
     void Dance()  override {
-        std::cout << "I'm not dancing!" << '\n';
     }
 };
 

@@ -7,7 +7,6 @@
 #include <cassert>
 #include <iostream>
 #include <memory>
-#include <vector>
 
 #include "Dance/IDanceBehavior.h"
 
@@ -21,7 +20,7 @@ public:
           m_danceBehavior(std::move(danceBehavior))
     {
         assert(m_quackBehavior);
-        // assert(m_danceBehavior);
+        assert(m_danceBehavior);
         SetFlyBehavior(std::move(flyBehavior));
     }
 
@@ -37,6 +36,7 @@ public:
 
     void Fly()
     {
+        CheckAndQuack();
         m_flyBehavior->Fly();
     }
 
@@ -55,9 +55,17 @@ public:
     virtual ~Duck() = default;
 
 private:
+    void CheckAndQuack()
+    {
+        int flightCount = m_flyBehavior->GetFlightCount();
+        if (flightCount != 0 && flightCount % FLIGHT_DIVIDER == 0) {
+            m_quackBehavior->Quack();
+        }
+    }
     std::unique_ptr<IFlyBehavior> m_flyBehavior;
     std::unique_ptr<IQuackBehavior> m_quackBehavior;
     std::unique_ptr<IDanceBehavior> m_danceBehavior;
+    const int FLIGHT_DIVIDER = 2;
 };
 
 #endif
