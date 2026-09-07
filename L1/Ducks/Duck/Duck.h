@@ -9,14 +9,19 @@
 #include <memory>
 #include <vector>
 
+#include "Dance/IDanceBehavior.h"
+
 class Duck
 {
 public:
     Duck(std::unique_ptr<IFlyBehavior>&& flyBehavior,
-        std::unique_ptr<IQuackBehavior>&& quackBehavior)
-        : m_quackBehavior(std::move(quackBehavior))
+        std::unique_ptr<IQuackBehavior>&& quackBehavior,
+        std::unique_ptr<IDanceBehavior>&& danceBehavior)
+        : m_quackBehavior(std::move(quackBehavior)),
+          m_danceBehavior(std::move(danceBehavior))
     {
         assert(m_quackBehavior);
+        // assert(m_danceBehavior);
         SetFlyBehavior(std::move(flyBehavior));
     }
 
@@ -35,9 +40,9 @@ public:
         m_flyBehavior->Fly();
     }
 
-    virtual void Dance()
+    void Dance()
     {
-        std::cout << "I'm Dancing" << std::endl;
+        m_danceBehavior->Dance();
     }
 
     void SetFlyBehavior(std::unique_ptr<IFlyBehavior>&& flyBehavior)
@@ -52,6 +57,7 @@ public:
 private:
     std::unique_ptr<IFlyBehavior> m_flyBehavior;
     std::unique_ptr<IQuackBehavior> m_quackBehavior;
+    std::unique_ptr<IDanceBehavior> m_danceBehavior;
 };
 
 #endif

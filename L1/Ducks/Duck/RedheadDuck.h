@@ -7,11 +7,13 @@
 
 #include <memory>
 
+#include "Dance/DanceMinuet.h"
+
 class RedheadDuck : public Duck
 {
 public:
     RedheadDuck()
-        : Duck(std::make_unique<FlyWithWings>(), std::make_unique<QuackBehavior>())
+        : Duck(std::make_unique<FlyWithWings>(), std::make_unique<QuackBehavior>(), std::make_unique<DanceMinuet>())
     {
     }
 

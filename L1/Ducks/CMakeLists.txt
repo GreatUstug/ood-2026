@@ -17,4 +17,8 @@ add_executable(Ducks main.cpp
         Duck/Quack/IQuackBehavior.h
         Duck/Quack/MuteQuackBehavior.h
         Duck/Quack/QuackBehavior.h
-        Duck/Quack/SqueakBehavior.h)
+        Duck/Quack/SqueakBehavior.h
+        Duck/Dance/IDanceBehavior.h
+        Duck/Dance/DanceWaltz.h
+        Duck/Dance/DanceMinuet.h
+        Duck/Dance/DanceNoWay.h)
