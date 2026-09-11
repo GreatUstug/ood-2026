@@ -14,14 +14,9 @@ add_executable(DucksFunc main.cpp
         Duck/Fly/FlyNoWay.h
         Duck/Fly/FlyWithWings.h
         Duck/Fly/IFlyBehavior.h
-        Duck/Quack/IQuackBehavior.h
-        Duck/Quack/MuteQuackBehavior.h
-        Duck/Quack/QuackBehavior.h
-        Duck/Quack/SqueakBehavior.h
-        Duck/Dance/IDanceBehavior.h
-        Duck/Dance/DanceWaltz.h
-        Duck/Dance/DanceMinuet.h
-        Duck/Dance/DanceNoWay.h
         Mocks/MockFlyBehavior.h
+        Duck/FlyBehavior.h
+        Duck/DanceBehavior.h
+        Duck/QuackBehavior.h
 )
 

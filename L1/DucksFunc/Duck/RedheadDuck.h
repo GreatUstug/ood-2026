@@ -2,18 +2,15 @@
 #define REDHEADDUCK_H
 
 #include "Duck.h"
-#include "Fly/FlyWithWings.h"
-#include "Quack/QuackBehavior.h"
-
-#include <memory>
-
-#include "Dance/DanceMinuet.h"
+#include "FlyBehavior.h"
+#include "QuackBehavior.h"
+#include "DanceBehavior.h"
 
 class RedheadDuck : public Duck
 {
 public:
     RedheadDuck()
-        : Duck(std::make_unique<FlyWithWings>(), std::make_unique<QuackBehavior>(), std::make_unique<DanceMinuet>())
+        : Duck(Fly::WithWings(), Quack::Normal(), Dance::Minuet())
     {
     }
 

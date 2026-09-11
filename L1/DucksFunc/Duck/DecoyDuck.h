@@ -4,18 +4,17 @@
 
 #ifndef DUCKS_DECOYDUCK_H
 #include "Duck.h"
-#include "Fly/FlyNoWay.h"
-#include "Quack/MuteQuackBehavior.h"
+#include "FlyBehavior.h"
+#include "QuackBehavior.h"
+#include "DanceBehavior.h"
 #include <iostream>
 #include <memory>
-
-#include "Dance/DanceNoWay.h"
 
 class DecoyDuck : public Duck
 {
 public:
     DecoyDuck()
-        : Duck(std::make_unique<FlyNoWay>(), std::make_unique<MuteQuackBehavior>(), std::make_unique<DanceNoWay>())
+        : Duck(Fly::NoWay(), Quack::Mute(), Dance::NoWay())
     {
     }
 
