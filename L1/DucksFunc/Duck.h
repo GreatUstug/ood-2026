@@ -23,15 +23,16 @@ public:
     	Behavior dance,
     	Behavior display
     	)
-		: m_flyBehavior(std::move(fly))
+		: m_flyBehavior(fly)
 		, m_quackBehavior(std::move(quack))
 		, m_danceBehavior(std::move(dance))
 		, m_displayBehavior(std::move(display))
+		, m_flightCount(0)
     {
         assert(m_quackBehavior);
         assert(m_danceBehavior);
     	// TODO: почему ассерты и полчему сеттер именно в таком виде
-        assert(m_flyBehavior);
+       SetFlyBehavior(fly);
     }
 
     void Quack() const
@@ -46,10 +47,10 @@ public:
 
     void Fly()
     {
+    	m_flightCount++;
     	m_flyBehavior();
-     //    m_flyBehavior->Fly();
-    	// PrintFlyCount();
-    	// CheckAndQuack();
+    	PrintFlyCount();
+    	CheckAndQuack();
     }
 
     void Dance() const
@@ -70,22 +71,23 @@ public:
     ~Duck() = default;
 
 private:
-	// void PrintFlyCount() const
-	// {
-	// 	std::cout << "Fly count: " << m_flyBehavior->GetFlightCount() << std::endl;
-	// }
- //    void CheckAndQuack() const
- //    {
- //        int flightCount = m_flyBehavior->GetFlightCount();
- //        if (flightCount != 0 && flightCount % FLIGHT_DIVIDER == 0) {
- //            m_quackBehavior->Quack();
- //        }
- //    }
+	void PrintFlyCount() const
+	{
+		std::cout << "Fly count: " << m_flightCount << std::endl;
+	}
+    void CheckAndQuack() const
+    {
+        int flightCount = m_flightCount;
+        if (flightCount != 0 && flightCount % FLIGHT_DIVIDER == 0) {
+            m_quackBehavior();
+        }
+    }
 	Behavior m_displayBehavior;
     Behavior m_flyBehavior;
     Behavior m_quackBehavior;
     Behavior m_danceBehavior;
     const int FLIGHT_DIVIDER = 2;
+	int m_flightCount;
 };
 
 #endif

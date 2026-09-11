@@ -11,12 +11,15 @@ namespace Fly
 {
 inline std::function<void()> WithWings()
 {
-	return []() { std::cout << "I'm flying with wings!!\n"; };
+	return []() mutable {
+		std::cout << "I'm flying with wings!!\n";
+	};
 }
 
 inline std::function<void()> NoWay()
 {
-	return []() {};
+	return []() {
+	};
 }
 }
 
