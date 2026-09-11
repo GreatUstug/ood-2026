@@ -1,4 +1,4 @@
-#include "Duck/DuckConstructBehavior.h"
+#include "DuckConstructBehavior.h"
 #include "DuckFunctions.h"
 #include <cstdlib>
 

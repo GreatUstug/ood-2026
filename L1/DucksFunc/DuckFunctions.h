@@ -1,7 +1,7 @@
 #ifndef DUCKS_DUCKFUNCTIONS_H
 #define DUCKS_DUCKFUNCTIONS_H
 
-#include "Duck/Duck.h"
+#include "Duck.h"
 
 void PlayWithDuck(Duck& duck)
 {
