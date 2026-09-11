@@ -5,12 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(DucksFunc main.cpp
         DuckFunctions.h
-        Duck/DecoyDuck.h
         Duck/Duck.h
-        Duck/MallarDuck.h
-        Duck/ModelDuck.h
-        Duck/RedheadDuck.h
-        Duck/RubberDuck.h
         Duck/Fly/FlyNoWay.h
         Duck/Fly/FlyWithWings.h
         Duck/Fly/IFlyBehavior.h
@@ -18,5 +13,6 @@ add_executable(DucksFunc main.cpp
         Duck/FlyBehavior.h
         Duck/DanceBehavior.h
         Duck/QuackBehavior.h
+        Duck/DuckConstructBehavior.h
 )
 

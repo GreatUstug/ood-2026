@@ -20,10 +20,13 @@ public:
     Duck(
     	Behavior fly,
     	Behavior quack,
-    	Behavior dance)
-	: m_flyBehavior(std::move(fly))
+    	Behavior dance,
+    	Behavior display
+    	)
+		: m_flyBehavior(std::move(fly))
 		, m_quackBehavior(std::move(quack))
 		, m_danceBehavior(std::move(dance))
+		, m_displayBehavior(std::move(display))
     {
         assert(m_quackBehavior);
         assert(m_danceBehavior);
@@ -36,7 +39,7 @@ public:
         m_quackBehavior();
     }
 
-    void Swim()
+    void Swim() const
     {
         std::cout << "I'm swimming" << std::endl;
     }
@@ -49,7 +52,7 @@ public:
     	// CheckAndQuack();
     }
 
-    void Dance()
+    void Dance() const
     {
         m_danceBehavior();
     }
@@ -60,8 +63,11 @@ public:
         m_flyBehavior = std::move(flyBehavior);
     }
 
-    virtual void Display() const = 0;
-    virtual ~Duck() = default;
+    void Display() const
+    {
+	    m_displayBehavior();
+    };
+    ~Duck() = default;
 
 private:
 	// void PrintFlyCount() const
@@ -75,6 +81,7 @@ private:
  //            m_quackBehavior->Quack();
  //        }
  //    }
+	Behavior m_displayBehavior;
     Behavior m_flyBehavior;
     Behavior m_quackBehavior;
     Behavior m_danceBehavior;

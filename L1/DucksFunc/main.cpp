@@ -1,26 +1,22 @@
-#include "Duck/DecoyDuck.h"
-#include "Duck/MallarDuck.h"
-#include "Duck/ModelDuck.h"
-#include "Duck/RedheadDuck.h"
-#include "Duck/RubberDuck.h"
+#include "Duck/DuckConstructBehavior.h"
 #include "DuckFunctions.h"
 #include <cstdlib>
 
 int main()
 {
-    MallardDuck mallardDuck;
+    Duck mallardDuck = DuckConstruct::Mallard();
     PlayWithDuck(mallardDuck);
 
-    RedheadDuck redheadDuck;
+    Duck redheadDuck = DuckConstruct::Redhead();
     PlayWithDuck(redheadDuck);
 
-    RubberDuck rubberDuck;
+    Duck rubberDuck = DuckConstruct::Rubber();
     PlayWithDuck(rubberDuck);
 
-    DecoyDuck decoyDuck;
+    Duck decoyDuck = DuckConstruct::Decoy();
     PlayWithDuck(decoyDuck);
 
-    ModelDuck modelDuck;
+    Duck modelDuck = DuckConstruct::Model();
     PlayWithDuck(modelDuck);
 
     // modelDuck.SetFlyBehavior(std::make_unique<FlyWithWings>());
