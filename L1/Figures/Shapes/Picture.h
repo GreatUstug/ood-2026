@@ -4,9 +4,13 @@
 
 #ifndef FIGURES_PICTURE_H
 #define FIGURES_PICTURE_H
-#include <unordered_map>
-#include "Figures/Shape.h"
+#include "Figures/Circle.h"
 
+#include <unordered_map>
+#include "Figures/IShape.h"
+
+#include <map>
+#include <memory>
 #include <string>
 
 class Picture
@@ -15,10 +19,27 @@ class Picture
 	Picture() = default;
 	void AddShape(const ShapeParams& params)
 	{
-		// m_shapes[params.id] = std::move(shape);
+		auto shape = CreateShape(params);
+		m_shapes[params.id] = std::move(shape);
+	}
+	std::unique_ptr<IShape> CreateShape(const ShapeParams& params)
+	{
+		// switch (params.type)
+		// {
+		// 	case "circle":return std::make_unique<Circle>();
+		// }
+		if (m_shapes.find(params.id) != m_shapes.end())
+		{
+			throw std::exception();
+		}
+		if (params.type == "circle")
+		{
+			double radius = std::stod(params.params[0]);
+			return std::make_unique<Circle>(params.num, params.x, params.y, radius);
+		}
 	}
 	private:
-		std::unordered_map<std::string, Shape> m_shapes;
+		std::map<std::string, std::unique_ptr<IShape>> m_shapes;
 };
 
 #endif //FIGURES_PICTURE_H

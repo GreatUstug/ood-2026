@@ -20,12 +20,19 @@ class ShapesCommandHandler
 		std::string line;
 		std::string command;
 		while (true) {
-			getline(in, line);
-			std::istringstream iss(line);
-			iss >> command;
-			if (command == "AddShape")
+			try
 			{
-				std::cout << 1;
+				getline(in, line);
+				std::istringstream iss(line);
+				iss >> command;
+				if (command == "AddShape")
+				{
+					std::cout << 1;
+				}
+			}
+			catch (const std::exception& e)
+			{
+				std::cerr << e.what();
 			}
 		}
 	}

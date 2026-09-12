@@ -19,7 +19,7 @@ TEST(It2, StartExecuteOperations)
 
 TEST(It2, ShapeCreate)
 {
-	EXPECT_NO_THROW(Shape shape({1, "rectangle", "#000001",0, 0, {}}));
+	EXPECT_NO_THROW(Circle Circle({1, 0, 0, 0.0}));
 }
 
 // TEST(It2, ExecuteParserAndCheckReading)
