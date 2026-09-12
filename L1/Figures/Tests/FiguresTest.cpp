@@ -6,12 +6,18 @@
 
 #include <gtest/gtest.h>
 
-TEST(FiguresTest, Test)
-{
-	EXPECT_EQ(1, 1);
-}
-
 TEST(It1, InitTest)
 {
 	EXPECT_NO_THROW(CommandHandler::ShapesCommandHandler commandHandler);
+}
+
+TEST(It2, StartExecuteOperations)
+{
+	EXPECT_NO_THROW(CommandHandler::ShapesCommandHandler commandHandler;
+		commandHandler.Execute());
+}
+
+TEST(It2, ShapeCreate)
+{
+	EXPECT_NO_THROW(Shape shape("x", "xx", 123, 456, {}));
 }

@@ -5,14 +5,14 @@
 #ifndef FIGURES_PICTURE_H
 #define FIGURES_PICTURE_H
 #include <unordered_map>
-#include "Shape.h"
+#include "Figures/Shape.h"
 
 #include <string>
 
 class Picture
 {
 	public:
-	Picture(){};
+	Picture() = default;
 	private:
 		std::unordered_map<std::string, Shape> m_shapes;
 };

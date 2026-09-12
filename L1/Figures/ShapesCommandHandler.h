@@ -5,15 +5,21 @@
 #ifndef FIGURES_SHAPESCOMMANDHANDLER_H
 #define FIGURES_SHAPESCOMMANDHANDLER_H
 #include "Shapes/Picture.h"
+
+#include <iostream>
+
 namespace CommandHandler
 {
 class ShapesCommandHandler
 {
 	public:
-	ShapesCommandHandler()
+	ShapesCommandHandler() = default;
+	void Execute(std::istream& in = std::cin, std::ostream& out = std::cout)
 	{
-		Picture picture;
-	};
+
+	}
+	private:
+	Picture m_picture;
 };
 }
 
