@@ -56,21 +56,25 @@ class Picture
 			return std::make_unique<Line>(params.color, params.x, params.y, xEnd, yEnd);
 		}
 		case ShapeType::TEXT: {
-			if (params.params.empty()) throw std::invalid_argument("Missing text content");
 			double size = std::stod(params.params[0]);
 			std::string text = params.params[1];
 			return std::make_unique<Text>(params.color, params.x, params.y, size, text);
 		}
 		}
-		std::string ListOneShape();
-		{
-
-		}
-		std::vector<std::string> ListAllShapes();
-		{
-
-		}
 	}
+	std::string ListOneShape(const std::string& id)
+	{
+		return m_shapes[id]->GetInfo();
+	};
+	std::vector<std::string> ListAllShapes()
+	{
+		std::vector<std::string> list;
+		for (auto& it : m_shapes)
+		{
+			list.push_back(m_shapes[it.first]->GetInfo());
+		}
+		return list;
+	};
 	private:
 		std::map<std::string, std::unique_ptr<IShape>> m_shapes;
 };
