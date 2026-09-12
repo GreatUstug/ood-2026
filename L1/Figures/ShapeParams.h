@@ -7,18 +7,14 @@
 #include <string>
 #include <vector>
 
-using ShapeAddParams = std::vector<std::string>;
-
 struct ShapeParams
 {
-	int num;
 	std::string type;
 	std::string id;
 	std::string color;
-	int x;
-	int y;
-	ShapeAddParams params;
-
+	double x;
+	double y;
+	std::vector<std::string> params;
 };
 
 #endif //FIGURES_COORDS_H

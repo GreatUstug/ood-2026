@@ -23,4 +23,8 @@ add_executable(Figures main.cpp
         Shapes/Picture.h
         Shapes/Figures/IShape.h
         ShapeParams.h
-        Shapes/Figures/Circle.h)
+        Shapes/Figures/Circle.h
+        Shapes/Figures/Rectangle.h
+        Shapes/Figures/Line.h
+        Shapes/Figures/Triangle.h
+        Shapes/Figures/Text.h)

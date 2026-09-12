@@ -14,9 +14,9 @@ class IShape
 	public:
 		virtual ~IShape() = default;
 	protected:
-		int m_number;
-		int m_x;
-		int m_y;
+		std::string m_color;
+		double m_x;
+		double m_y;
 };
 
 #endif //FIGURES_SHAPE_H

@@ -35,8 +35,9 @@ class Picture
 		if (params.type == "circle")
 		{
 			double radius = std::stod(params.params[0]);
-			return std::make_unique<Circle>(params.num, params.x, params.y, radius);
+			return std::make_unique<Circle>(params.color, params.x, params.y, radius);
 		}
+
 	}
 	private:
 		std::map<std::string, std::unique_ptr<IShape>> m_shapes;

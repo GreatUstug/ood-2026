@@ -9,9 +9,9 @@
 class Circle : public IShape
 {
 	public:
-	Circle(int number, int x, int y, double radius) : m_radius(radius)
+	Circle(std::string color, double x, double y, double radius) : m_radius(radius)
 	{
-		m_number = number;
+		m_color = color;
 		m_x = x;
 		m_y = y;
 	}
