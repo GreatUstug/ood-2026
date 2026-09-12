@@ -4,6 +4,8 @@
 
 #ifndef FIGURES_SHAPE_H
 #define FIGURES_SHAPE_H
+#include "../../ShapeParams.h"
+
 #include <string>
 #include <vector>
 
@@ -11,22 +13,20 @@ class Shape
 {
 	public:
 		Shape(
-			const std::string& name,
-			const std::string& id,
-			int x,
-			int y,
-			const std::vector<std::string>& params
+			ShapeParams params
 			)
 		{
-			m_name = name;
-			m_id = id;
-			m_x = x;
-			m_y = y;
-			m_params = params;
+			m_number = params.num;
+			m_type = params.type;
+			m_id = params.id;
+			m_x = params.x;
+			m_y = params.y;
+			m_params = params.params;
 		};
 		virtual ~Shape() = default;
 	private:
-		std::string m_name;
+		int m_number;
+		std::string m_type;
 		std::string m_id;
 		int m_x;
 		int m_y;

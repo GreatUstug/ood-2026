@@ -21,4 +21,5 @@ add_subdirectory(Tests)
 add_executable(Figures main.cpp
         ShapesCommandHandler.h
         Shapes/Picture.h
-        Shapes/Figures/Shape.h)
+        Shapes/Figures/Shape.h
+        ShapeParams.h)

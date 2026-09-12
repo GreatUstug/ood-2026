@@ -7,6 +7,7 @@
 #include "Shapes/Picture.h"
 
 #include <iostream>
+#include <sstream>
 
 namespace CommandHandler
 {
@@ -16,7 +17,17 @@ class ShapesCommandHandler
 	ShapesCommandHandler() = default;
 	void Execute(std::istream& in = std::cin, std::ostream& out = std::cout)
 	{
-
+		std::string line;
+		std::string command;
+		while (true) {
+			getline(in, line);
+			std::istringstream iss(line);
+			iss >> command;
+			if (command == "AddShape")
+			{
+				std::cout << 1;
+			}
+		}
 	}
 	private:
 	Picture m_picture;

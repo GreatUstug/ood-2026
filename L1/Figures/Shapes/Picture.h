@@ -13,6 +13,10 @@ class Picture
 {
 	public:
 	Picture() = default;
+	void AddShape(const ShapeParams& params)
+	{
+		// m_shapes[params.id] = std::move(shape);
+	}
 	private:
 		std::unordered_map<std::string, Shape> m_shapes;
 };

@@ -10,5 +10,6 @@
 int main()
 {
 	CommandHandler::ShapesCommandHandler ShapesCommandHandler;
+	ShapesCommandHandler.Execute();
 	return 0;
 }
