@@ -6,10 +6,21 @@
 #define FIGURES_COORDS_H
 #include <string>
 #include <vector>
+enum class ShapeType {
+	CIRCLE,
+	RECTANGLE,
+	TRIANGLE,
+	LINE,
+	TEXT
+};
+
+enum class HandlerCommands {
+	ADD_SHAPE,
+};
 
 struct ShapeParams
 {
-	std::string type;
+	ShapeType type;
 	std::string id;
 	std::string color;
 	double x;

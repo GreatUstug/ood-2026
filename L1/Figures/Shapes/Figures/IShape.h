@@ -13,6 +13,7 @@ class IShape
 {
 	public:
 		virtual ~IShape() = default;
+		virtual std::string GetInfo() const = 0;
 	protected:
 		std::string m_color;
 		double m_x;

@@ -16,6 +16,10 @@ public:
 		m_y = y;
 	}
 	virtual ~Text() = default;
+	std::string GetInfo() const override {
+		return "Text '" + m_text + "' at (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
+			   ") size=" + std::to_string(m_size);
+	}
 private:
 	double m_size;
 	std::string m_text;

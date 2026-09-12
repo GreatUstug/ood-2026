@@ -15,6 +15,11 @@ public:
 		m_x = x;
 		m_y = y;
 	}
+	std::string GetInfo() const override {
+		return "Triangle at (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
+			   ") to (" + std::to_string(m_x2) + ", " + std::to_string(m_y2) +
+			   ") and (" + std::to_string(m_x3) + ", " + std::to_string(m_y3) + ")";
+	}
 	virtual ~Triangle() = default;
 private:
 	double m_x2;

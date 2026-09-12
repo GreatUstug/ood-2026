@@ -16,6 +16,9 @@ class Circle : public IShape
 		m_y = y;
 	}
 	virtual ~Circle() = default;
+	std::string GetInfo() const override {
+		return "Circle at (" + std::to_string(m_x) + ", " + std::to_string(m_y) + ") r=" + std::to_string(m_radius);
+	}
 	private:
 	double m_radius;
 };

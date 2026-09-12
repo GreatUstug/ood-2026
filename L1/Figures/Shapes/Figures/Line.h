@@ -18,6 +18,10 @@ public:
 		m_y = y;
 	}
 	virtual ~Line() = default;
+	std::string GetInfo() const override {
+		return "Line from (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
+			   ") to (" + std::to_string(m_xEnd) + ", " + std::to_string(m_yEnd) + ")";
+	}
 private:
 	double m_xEnd;
 	double m_yEnd;

@@ -17,24 +17,11 @@ TEST(It2, StartExecuteOperations)
 		commandHandler.Execute());
 }
 
-TEST(It2, ShapeCreate)
-{
-	EXPECT_NO_THROW(Circle Circle({1, 0, 0, 0.0}));
+TEST(It2, AddShapesWithSameIdThrows) {
+    Picture picture;
+    ShapeParams params{ ShapeType::RECTANGLE, "#000001", "#000001", 0, 0, {"10", "20"}};
+
+    picture.AddShape(params);
+    EXPECT_THROW(picture.AddShape(params), std::exception);
 }
 
-// TEST(It2, ExecuteParserAndCheckReading)
-// {
-// 	Picture picture;
-// 	testing::internal::CaptureStdout();
-//
-// 	output = testing::internal::GetCapturedStdout();
-// 	EXPECT_EQ(output, "f:20.00\n");
-// 	testing::internal::GetCapturedStdout();
-// }
-
-TEST(It2, AddShapesWithSameIdToPicture)
-{
-	Picture picture;
-	picture.AddShape({1, "rectangle", "#000001", "#000001", 0, 0, {}});
-	EXPECT_THROW(picture.AddShape({1, "rectangle", "#000001", "#000001",0, 0, {}}),std::exception);
-}
