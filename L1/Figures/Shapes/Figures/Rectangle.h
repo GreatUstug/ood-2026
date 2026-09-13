@@ -19,8 +19,9 @@ public:
 	}
 	virtual ~Rectangle() = default;
 	std::string GetInfo() const override {
-		return "Rectangle at (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
-			   ") w=" + std::to_string(m_width) + " h=" + std::to_string(m_height);
+		return "rectangle " + m_color + " " +
+			   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
+			   std::to_string(m_width) + " " + std::to_string(m_height);
 	}
 private:
 	double m_width;

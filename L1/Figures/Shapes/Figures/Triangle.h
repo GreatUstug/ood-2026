@@ -16,9 +16,10 @@ public:
 		m_y = y;
 	}
 	std::string GetInfo() const override {
-		return "Triangle at (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
-			   ") to (" + std::to_string(m_x2) + ", " + std::to_string(m_y2) +
-			   ") and (" + std::to_string(m_x3) + ", " + std::to_string(m_y3) + ")";
+		return "triangle " + m_color + " " +
+			   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
+			   std::to_string(m_x2) + " " + std::to_string(m_y2) + " " +
+			   std::to_string(m_x3) + " " + std::to_string(m_y3);
 	}
 	virtual ~Triangle() = default;
 private:

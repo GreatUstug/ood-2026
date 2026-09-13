@@ -75,6 +75,10 @@ class Picture
 		}
 		return list;
 	};
+	void EditShapeColor(const std::string& id, const std::string& color)
+	{
+		m_shapes[id]->SetColor(color);
+	}
 	private:
 		std::map<std::string, std::unique_ptr<IShape>> m_shapes;
 };

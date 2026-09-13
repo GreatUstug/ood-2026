@@ -17,8 +17,9 @@ public:
 	}
 	virtual ~Text() = default;
 	std::string GetInfo() const override {
-		return "Text '" + m_text + "' at (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
-			   ") size=" + std::to_string(m_size);
+		return "text " + m_color + " " +
+			   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
+			   std::to_string(m_size) + " " + m_text;
 	}
 private:
 	double m_size;

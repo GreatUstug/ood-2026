@@ -19,8 +19,9 @@ public:
 	}
 	virtual ~Line() = default;
 	std::string GetInfo() const override {
-		return "Line from (" + std::to_string(m_x) + ", " + std::to_string(m_y) +
-			   ") to (" + std::to_string(m_xEnd) + ", " + std::to_string(m_yEnd) + ")";
+		return "line " + m_color + " " +
+			   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
+			   std::to_string(m_xEnd) + " " + std::to_string(m_yEnd);
 	}
 private:
 	double m_xEnd;
