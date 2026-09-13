@@ -94,3 +94,13 @@ TEST(It3, ChangeColor)
 
 	EXPECT_TRUE(result.find("red") != std::string::npos);
 }
+
+TEST(It3, DeleteObject)
+{
+	Picture picture;
+	ShapeParams params{ ShapeType::TRIANGLE, "t1", "green", 0, 0, {"10", "0", "5", "10"} };
+
+	picture.AddShape(params);
+	EXPECT_NO_THROW(picture.DeleteShape("t1"));
+	EXPECT_THROW(picture.DeleteShape("t1"), std::exception);
+}

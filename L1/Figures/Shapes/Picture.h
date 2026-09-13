@@ -77,7 +77,13 @@ class Picture
 	};
 	void EditShapeColor(const std::string& id, const std::string& color)
 	{
+		if (m_shapes.find(id) != m_shapes.end()) throw std::exception();
 		m_shapes[id]->SetColor(color);
+	}
+	void DeleteShape(const std::string& id)
+	{
+		if (!m_shapes.contains(id)) throw std::runtime_error("No such shape to delete");
+		m_shapes.erase(id);
 	}
 	private:
 		std::map<std::string, std::unique_ptr<IShape>> m_shapes;
