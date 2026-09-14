@@ -5,6 +5,7 @@ struct IFlyBehavior
 {
     virtual ~IFlyBehavior(){};
     virtual void Fly() = 0;
+	virtual bool CanFly() const = 0;
 };
 
 #endif //DUCKS_IFLYBEHAVIOR_H

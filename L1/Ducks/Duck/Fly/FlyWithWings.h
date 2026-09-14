@@ -9,16 +9,12 @@ class FlyWithWings : public IFlyBehavior
 public:
     void Fly() override
     {
-        m_flightCount++;
         std::cout << "I'm flying with wings!!" << std::endl;
     }
-	bool CanFly() const override {return true;}
-    int GetFlightCount() const override
+	bool CanFly() const override
     {
-        return m_flightCount;
+	    return false;
     }
-private:
-    int m_flightCount = 0;
 };
 
 #endif //DUCKS_FLYWITHWINGS_H

@@ -37,6 +37,9 @@ public:
 
     void Fly()
     {
+    	if (m_flyBehavior->CanFly() == true) {
+    		m_flightCount++;
+    	}
         m_flyBehavior->Fly();
     	PrintFlyCount();
     	CheckAndQuack();
@@ -59,19 +62,19 @@ public:
 private:
 	void PrintFlyCount() const
 	{
-		std::cout << "Fly count: " << m_flyBehavior->GetFlightCount() << std::endl;
+		std::cout << "Fly count: " << m_flightCount << std::endl;
 	}
     void CheckAndQuack() const
     {
-        int flightCount = m_flyBehavior->GetFlightCount();
-        if (flightCount != 0 && flightCount % FLIGHT_DIVIDER == 0) {
+        if ( m_flightCount % FLIGHT_DIVIDER == 0) {
             m_quackBehavior->Quack();
         }
     }
     std::unique_ptr<IFlyBehavior> m_flyBehavior;
     std::unique_ptr<IQuackBehavior> m_quackBehavior;
     std::unique_ptr<IDanceBehavior> m_danceBehavior;
-    const int FLIGHT_DIVIDER = 2;
+    static constexpr int FLIGHT_DIVIDER = 2;
+	int m_flightCount = 0;
 };
 
 #endif
