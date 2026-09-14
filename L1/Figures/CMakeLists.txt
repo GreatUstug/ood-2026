@@ -18,6 +18,18 @@ enable_testing()
 include(GoogleTest)
 add_subdirectory(Tests)
 
+FetchContent_Declare(
+        sfml
+        GIT_REPOSITORY https://github.com/SFML/SFML.git
+        GIT_TAG        2.6.1
+)
+set(SFML_BUILD_NETWORK OFF CACHE BOOL "" FORCE)
+set(SFML_BUILD_AUDIO OFF CACHE BOOL "" FORCE)
+set(SFML_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(SFML_BUILD_DOC OFF CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(sfml)
+
 add_executable(Figures main.cpp
         ShapesCommandHandler.h
         Shapes/Picture.h
@@ -27,4 +39,12 @@ add_executable(Figures main.cpp
         Shapes/Figures/Rectangle.h
         Shapes/Figures/Line.h
         Shapes/Figures/Triangle.h
-        Shapes/Figures/Text.h)
+        Shapes/Figures/Text.h
+        gfx/ICanvas.h
+        gfx/SFMLCanvas.h)
+target_include_directories(Figures PRIVATE ${CMAKE_SOURCE_DIR})
+target_link_libraries(Figures PRIVATE
+        sfml-graphics
+        sfml-window
+        sfml-system
+)

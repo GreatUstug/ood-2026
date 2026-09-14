@@ -25,7 +25,6 @@ public:
 	}
 	void Draw(gfx::ICanvas& canvas) const override {
 		canvas.SetColor(gfx::Color::Parse(m_color));
-		canvas.SetColor(col);
 
 		canvas.MoveTo(m_x, m_y);
 		canvas.LineTo(m_x + m_width, m_y);
