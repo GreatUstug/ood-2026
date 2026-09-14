@@ -85,6 +85,19 @@ class Picture
 		if (!m_shapes.contains(id)) throw std::runtime_error("No such shape to delete");
 		m_shapes.erase(id);
 	}
+	void MovePicture(double dx, double dy)
+	{
+		for (auto& it : m_shapes)
+		{
+			MoveShape(it.first, dx, dy);
+		}
+	}
+	void MoveShape(const std::string& id, double dx, double dy) {
+		auto it = m_shapes.find(id);
+		if (it != m_shapes.end()) {
+			it->second->Move(dx, dy);
+		}
+	}
 	private:
 		std::map<std::string, std::unique_ptr<IShape>> m_shapes;
 };

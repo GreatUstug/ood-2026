@@ -18,6 +18,11 @@ class IShape
 		{
 			m_color = color;
 		};
+		virtual void Move(double dx, double dy) {
+			m_x += dx;
+			m_y += dy;
+		};
+		virtual void Draw(gfx::ICanvas& canvas) const = 0;
 	protected:
 		std::string m_color;
 		double m_x;
