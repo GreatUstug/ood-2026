@@ -5,9 +5,10 @@
 #ifndef FIGURES_SHAPE_H
 #define FIGURES_SHAPE_H
 #include "../../ShapeParams.h"
+#include  "../../gfx/ICanvas.h"
 
 #include <string>
-#include <vector>
+
 
 class IShape
 {

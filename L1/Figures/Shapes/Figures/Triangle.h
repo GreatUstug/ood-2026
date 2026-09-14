@@ -21,6 +21,14 @@ public:
 			   std::to_string(m_x2) + " " + std::to_string(m_y2) + " " +
 			   std::to_string(m_x3) + " " + std::to_string(m_y3);
 	}
+	void Draw(gfx::ICanvas& canvas) const override {
+		canvas.SetColor(gfx::Color::Parse(m_color));
+
+		canvas.MoveTo(m_x, m_y);
+		canvas.LineTo(m_x2, m_y2);
+		canvas.LineTo(m_x3, m_y3);
+		canvas.LineTo(m_x, m_y);
+	}
 	virtual ~Triangle() = default;
 private:
 	double m_x2;

@@ -23,6 +23,16 @@ public:
 			   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
 			   std::to_string(m_width) + " " + std::to_string(m_height);
 	}
+	void Draw(gfx::ICanvas& canvas) const override {
+		canvas.SetColor(gfx::Color::Parse(m_color));
+		canvas.SetColor(col);
+
+		canvas.MoveTo(m_x, m_y);
+		canvas.LineTo(m_x + m_width, m_y);
+		canvas.LineTo(m_x + m_width, m_y + m_height);
+		canvas.LineTo(m_x, m_y + m_height);
+		canvas.LineTo(m_x, m_y);
+	}
 private:
 	double m_width;
 	double m_height;

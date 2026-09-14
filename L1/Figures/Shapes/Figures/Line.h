@@ -23,6 +23,11 @@ public:
 			   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
 			   std::to_string(m_xEnd) + " " + std::to_string(m_yEnd);
 	}
+	void Draw(gfx::ICanvas& canvas) const override {
+		canvas.SetColor(gfx::Color::Parse(m_color));
+		canvas.MoveTo(m_x, m_y);
+		canvas.LineTo(m_xEnd, m_yEnd);
+	}
 private:
 	double m_xEnd;
 	double m_yEnd;

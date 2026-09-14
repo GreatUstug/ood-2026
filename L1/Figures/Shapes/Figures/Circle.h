@@ -21,6 +21,10 @@ class Circle : public IShape
 		   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
 		   std::to_string(m_radius);
 	}
+	void Draw(gfx::ICanvas& canvas) const override {
+		canvas.SetColor(gfx::Color::Parse(m_color));
+		canvas.DrawEllipse(m_x, m_y, m_radius, m_radius);
+	}
 	private:
 	double m_radius;
 };

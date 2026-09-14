@@ -98,6 +98,18 @@ class Picture
 			it->second->Move(dx, dy);
 		}
 	}
+
+	void DrawShape(const std::string& id, gfx::ICanvas& canvas) const {
+		auto it = m_shapes.find(id);
+		if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+		it->second->Draw(canvas);
+	}
+
+	void DrawAll(gfx::ICanvas& canvas) const {
+		for (const auto& [id, shape] : m_shapes) {
+			shape->Draw(canvas);
+		}
+	}
 	private:
 		std::map<std::string, std::unique_ptr<IShape>> m_shapes;
 };
