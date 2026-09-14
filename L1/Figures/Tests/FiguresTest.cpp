@@ -104,3 +104,27 @@ TEST(It3, DeleteObject)
 	EXPECT_NO_THROW(picture.DeleteShape("t1"));
 	EXPECT_THROW(picture.DeleteShape("t1"), std::exception);
 }
+
+TEST(It3, MoveObject)
+{
+	Picture picture;
+	ShapeParams params{ ShapeType::TRIANGLE, "t1", "green", 0, 0, {"10", "0", "5", "10"} };
+
+	picture.AddShape(params);
+	picture.MoveShape("t1", 2, 2);
+	std::string result = picture.ListOneShape("t1");
+	EXPECT_TRUE(result.find("2") != std::string::npos);
+}
+
+TEST(It3, MoveObjects)
+{
+	Picture picture;
+	ShapeParams params{ ShapeType::TRIANGLE, "t1", "green", 0, 0, {"10", "0", "5", "10"} };
+	ShapeParams params1{ ShapeType::TRIANGLE, "t2", "green", 3, 3, {"10", "0", "5", "10"} };
+
+	picture.AddShape(params);
+	picture.AddShape(params1);
+	picture.MovePicture(2, 2);
+	std::string result = picture.ListOneShape("t2");
+	EXPECT_TRUE(result.find("5") != std::string::npos);
+}
