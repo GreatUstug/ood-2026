@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "DucksFunc.dir\\Debug\\main.obj",
+            "outputs": [
+                "C:\\Projects\\OOD\\L1\\DucksFunc\\build\\DucksFunc.dir\\Debug\\vc143.pdb",
+                "DucksFunc.dir\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}

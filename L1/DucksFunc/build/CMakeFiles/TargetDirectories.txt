@@ -1,0 +1,3 @@
+C:/Projects/OOD/L1/DucksFunc/build/CMakeFiles/DucksFunc.dir
+C:/Projects/OOD/L1/DucksFunc/build/CMakeFiles/ALL_BUILD.dir
+C:/Projects/OOD/L1/DucksFunc/build/CMakeFiles/ZERO_CHECK.dir

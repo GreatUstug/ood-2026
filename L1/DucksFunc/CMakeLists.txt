@@ -3,10 +3,13 @@ project(DucksFunc)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(DucksFunc main.cpp
+add_executable(DucksFunc
+        main.cpp
         DuckFunctions.h
-        Duck/Fly/FlyNoWay.h
-        Duck/Fly/FlyWithWings.h
-        Duck/Fly/IFlyBehavior.h
+        DanceBehavior.h
+        Duck.h
+        DuckConstructBehavior.h
+        FlyBehavior.h
+        QuackBehavior.h
 )
 

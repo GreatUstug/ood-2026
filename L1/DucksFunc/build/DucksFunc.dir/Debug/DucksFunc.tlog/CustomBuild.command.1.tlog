@@ -1,0 +1,10 @@
+^C:\PROJECTS\OOD\L1\DUCKSFUNC\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/OOD/L1/DucksFunc -BC:/Projects/OOD/L1/DucksFunc/build --check-stamp-file C:/Projects/OOD/L1/DucksFunc/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

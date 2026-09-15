@@ -1,0 +1,10 @@
+^C:\PROJECTS\OOD\L1\DUCKSFUNC\BUILD\CMAKEFILES\01FDB03A5E843D5EC461172FF8534A30\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/OOD/L1/DucksFunc -BC:/Projects/OOD/L1/DucksFunc/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/OOD/L1/DucksFunc/build/DucksFunc.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

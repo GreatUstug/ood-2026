@@ -9,16 +9,21 @@
 
 namespace Fly
 {
-inline std::function<void()> WithWings()
+inline std::function<int()> WithWings()
 {
-	return []() mutable {
+	return [count = 0]() mutable -> int{
+		++count;
+		std::cout << "The flight number is " << count << '\n';
 		std::cout << "I'm flying with wings!!\n";
+		return count;
 	};
 }
 
-inline std::function<void()> NoWay()
+inline std::function<int()> NoWay()
 {
-	return []() {
+	return []() -> int 
+	{
+		return 0;
 	};
 }
 }
