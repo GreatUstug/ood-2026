@@ -13,7 +13,6 @@ class MockFlyBehavior : public IFlyBehavior
 public:
 	MOCK_METHOD(void, Fly, (), (override));
 	MOCK_METHOD(bool, CanFly, (), (const, override));
-	MOCK_METHOD(int, GetFlightCount, (), (const, override));
 };
 
 #endif //DUCKS_MOCKFLYBEHAVIOR_H
