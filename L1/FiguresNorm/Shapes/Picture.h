@@ -109,27 +109,27 @@ private:
         switch (params.type) {
             case ShapeType::CIRCLE: {
                 if (params.params.size() < 1) throw std::runtime_error("Circle needs radius");
-                return std::make_unique<shapes::Circle>(params.color, params.x, params.y, std::stod(params.params[0]));
+                return std::make_unique<shapes::Circle>(params.x, params.y, std::stod(params.params[0]));
             }
             case ShapeType::RECTANGLE: {
                 if (params.params.size() < 2) throw std::runtime_error("Rectangle needs width and height");
-                return std::make_unique<shapes::Rectangle>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Rectangle>(params.x, params.y,
                                                    std::stod(params.params[0]), std::stod(params.params[1]));
             }
             case ShapeType::TRIANGLE: {
                 if (params.params.size() < 4) throw std::runtime_error("Triangle needs 3 points");
-                return std::make_unique<shapes::Triangle>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Triangle>(params.x, params.y,
                                                   std::stod(params.params[0]), std::stod(params.params[1]),
                                                   std::stod(params.params[2]), std::stod(params.params[3]));
             }
             case ShapeType::LINE: {
                 if (params.params.size() < 2) throw std::runtime_error("Line needs end point");
-                return std::make_unique<shapes::Line>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Line>(params.x, params.y,
                                               std::stod(params.params[0]), std::stod(params.params[1]));
             }
             case ShapeType::TEXT: {
                 if (params.params.size() < 2) throw std::runtime_error("Text needs size and content");
-                return std::make_unique<shapes::Text>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Text>(params.x, params.y,
                                               std::stod(params.params[0]), params.params[1]);
             }
             default:

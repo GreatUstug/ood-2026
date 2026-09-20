@@ -11,20 +11,18 @@ namespace shapes
 class Circle : public IShapeGeometry
 {
 public:
-	Circle(std::string color, double x, double y, double radius) : m_radius(radius)
+	Circle(double x, double y, double radius) : m_radius(radius)
 	{
-		m_color = color;
 		m_x = x;
 		m_y = y;
 	}
 	virtual ~Circle() = default;
 	std::string GetInfo() const override {
-		return "circle " + m_color + " " +
+		return "circle " +
 		   std::to_string(m_x) + " " + std::to_string(m_y) + " " +
 		   std::to_string(m_radius);
 	}
 	void Draw(gfx::ICanvas& canvas) const override {
-		canvas.SetColor(gfx::Color::Parse(m_color));
 		canvas.DrawEllipse(m_x, m_y, m_radius, m_radius);
 	}
 private:
