@@ -22,8 +22,8 @@ public:
 	};
 	virtual void Draw(gfx::ICanvas& canvas) const = 0;
 protected:
-	double m_x;
-	double m_y;
+	double m_x = 0;
+	double m_y = 0;
 };
 }
 

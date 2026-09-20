@@ -26,7 +26,6 @@ public:
 			   std::to_string(m_width) + " " + std::to_string(m_height);
 	}
 	void Draw(gfx::ICanvas& canvas) const override {
-
 		canvas.MoveTo(m_x, m_y);
 		canvas.LineTo(m_x + m_width, m_y);
 		canvas.LineTo(m_x + m_width, m_y + m_height);

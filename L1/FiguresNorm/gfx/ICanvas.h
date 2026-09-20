@@ -18,27 +18,16 @@ namespace gfx {
         Color(unsigned char r = 0, unsigned char g = 0, unsigned char b = 0, unsigned char a = 255)
             : r(r), g(g), b(b), a(a) {}
 
-        static Color Parse(const std::string& str) {
-            if (!str.empty() && (str[0] == '#' || str.length() == 6)) {
-                size_t start = (str[0] == '#') ? 1 : 0;
-                if (str.length() - start != 6)
-                    throw std::runtime_error("Invalid hex color: " + str);
-
-                unsigned long val = std::stoul(str.substr(start), nullptr, 16);
-                return Color(
-                    static_cast<unsigned char>((val >> 16) & 0xFF),
-                    static_cast<unsigned char>((val >> 8) & 0xFF),
-                    static_cast<unsigned char>(val & 0xFF)
-                );
-            }
-
-            if (str == "red") return {255, 0, 0};
-            if (str == "green") return {0, 255, 0};
-            if (str == "blue") return {0, 0, 255};
-            if (str == "black") return {0, 0, 0};
-            if (str == "white") return {255, 255, 255};
-
-            throw std::runtime_error("Unknown color format: " + str);
+    	static Color Parse(const std::string& str) {
+        	if (str.empty() || str[0] != '#' || str.length() != 7) {
+        		throw std::runtime_error("Invalid hex color (expected #RRGGBB): " + str);
+        	}
+        	unsigned long val = std::stoul(str.substr(1), nullptr, 16);
+        	return Color(
+				static_cast<unsigned char>((val >> 16) & 0xFF),
+				static_cast<unsigned char>((val >> 8) & 0xFF),
+				static_cast<unsigned char>(val & 0xFF)
+			);
         }
     };
 

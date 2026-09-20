@@ -39,7 +39,7 @@ public:
     }
 
 private:
-    Picture& m_picture;
+    shapes::Picture& m_picture;
 
     void HandleAddShape(std::istringstream& iss, std::ostream& out) {
         ShapeParams p;
@@ -54,8 +54,7 @@ private:
         else throw std::runtime_error("Unknown type: " + typeStr);
 
         if (!(iss >> p.x >> p.y)) throw std::runtime_error("Missing coordinates");
-        std::string param;
-        while (iss >> param) p.params.push_back(param);
+    	p.params = GetParams(p.type,iss);
 
         m_picture.AddShape(p);
         out << "Added: " << p.id << "\n";
@@ -103,12 +102,28 @@ private:
     	else throw std::runtime_error("Unknown type: " + typeStr);
 
     	if (!(iss >> p.x >> p.y)) throw std::runtime_error("Missing coordinates");
-    	std::string param;
-    	while (iss >> param) p.params.push_back(param);
+    	p.params = GetParams(p.type,iss);
 
     	m_picture.ChangeShape(id, p);
     	out << "Changed: " << id << "\n";
     }
+
+	std::vector<std::string> GetParams(const ShapeType& type, std::istringstream& iss)
+    {
+    	std::vector<std::string> params;
+    	if (type == ShapeType::TEXT) {
+    		std::string sizeStr, textLine;
+    		iss >> sizeStr;
+    		std::getline(iss, textLine);
+    		if (!textLine.empty() && textLine[0] == ' ') textLine.erase(0, 1);
+    		params.push_back(sizeStr);
+    		params.push_back(textLine);
+    	} else {
+    		std::string param;
+    		while (iss >> param) params.push_back(param);
+    	}
+    	return params;
+    };
 };
 
 } // namespace CommandHandler

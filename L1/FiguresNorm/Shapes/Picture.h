@@ -111,12 +111,16 @@ private:
         switch (params.type) {
             case ShapeType::CIRCLE: {
                 if (params.params.size() < 1) throw std::runtime_error("Circle needs radius");
-                return std::make_unique<shapes::Circle>(params.x, params.y, std::stod(params.params[0]));
+            	double r = std::stod(params.params[0]);
+            	if (r < 0) throw std::runtime_error("Radius must be non-negative");
+                return std::make_unique<shapes::Circle>(params.x, params.y, r);
             }
             case ShapeType::RECTANGLE: {
                 if (params.params.size() < 2) throw std::runtime_error("Rectangle needs width and height");
-                return std::make_unique<shapes::Rectangle>(params.x, params.y,
-                                                   std::stod(params.params[0]), std::stod(params.params[1]));
+            	double w = std::stod(params.params[0]);
+            	double h = std::stod(params.params[1]);
+            	if ((w < 0) || (h < 0)) throw std::runtime_error("Width and height must be non-negative");
+                return std::make_unique<shapes::Rectangle>(params.x, params.y, w, h);
             }
             case ShapeType::TRIANGLE: {
                 if (params.params.size() < 4) throw std::runtime_error("Triangle needs 3 points");
@@ -131,8 +135,10 @@ private:
             }
             case ShapeType::TEXT: {
                 if (params.params.size() < 2) throw std::runtime_error("Text needs size and content");
+            	double size = std::stod(params.params[0]);
+            	if (size < 0) throw std::runtime_error("Font size must be non-negative");
                 return std::make_unique<shapes::Text>(params.x, params.y,
-                                              std::stod(params.params[0]), params.params[1]);
+                                              size, params.params[1]);
             }
             default:
                 throw std::runtime_error("Unknown shape type");

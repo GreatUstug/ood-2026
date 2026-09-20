@@ -11,7 +11,7 @@ namespace shapes
 class Text : public IShapeGeometry
 {
 public:
-	Text(double x, double y, double size, std::string text) : m_size(size), m_text(text)
+	Text(double x, double y, double size, std::string text) : m_size(size), m_text(std::move(text))
 	{
 		m_x = x;
 		m_y = y;
