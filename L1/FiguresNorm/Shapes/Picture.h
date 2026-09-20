@@ -8,7 +8,7 @@
 #include "Figures/Line.h"
 #include "Figures/Text.h"
 #include "../ShapeParams.h"
-#include "gfx/SFMLCanvas.h"
+#include "gfx/ICanvas.h"
 
 #include <map>
 #include <memory>
@@ -79,33 +79,18 @@ public:
         return result;
     }
 
-	void RenderToWindow() const {
-    	sf::RenderWindow window(sf::VideoMode(sf::Vector2u(800, 600)), "Figures Preview");
-
-    	sf::Font font;
-    	if (!font.openFromFile("arial.ttf")) {
-    		throw std::runtime_error("Font could not be loaded");
-    	}
-
-    	SFMLCanvas canvas(window, font);
-
-    	while (window.isOpen()) {
-    		while (const std::optional event = window.pollEvent()) {
-    			if (event->is<sf::Event::Closed>()) {
-    				window.close();
-    			}
-    		}
-    		window.clear();
-
-    		for (const auto& id : m_order) {
-    			auto it = m_shapes.find(id);
-    			if (it != m_shapes.end()) it->second->Draw(canvas);
-    		}
-
-    		window.display();
-    	}
+		void DrawShape(const std::string& id, gfx::ICanvas& canvas) const {
+    	auto it = m_shapes.find(id);
+    	if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+    	it->second->Draw(canvas);
     }
 
+		void DrawPicture(gfx::ICanvas& canvas) const {
+    	for (const auto& id : m_order) {
+    		auto it = m_shapes.find(id);
+    		if (it != m_shapes.end()) it->second->Draw(canvas);
+    	}
+    }
 private:
     std::unique_ptr<IShapeGeometry> CreateShape(const ShapeParams& params) {
         switch (params.type) {
