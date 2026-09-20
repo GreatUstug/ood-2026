@@ -22,12 +22,18 @@ namespace gfx {
         	if (str.empty() || str[0] != '#' || str.length() != 7) {
         		throw std::runtime_error("Invalid hex color (expected #RRGGBB): " + str);
         	}
-        	unsigned long val = std::stoul(str.substr(1), nullptr, 16);
-        	return Color(
+        	try
+        	{
+        		unsigned long val = std::stoul(str.substr(1), nullptr, 16);
+        		return Color(
 				static_cast<unsigned char>((val >> 16) & 0xFF),
 				static_cast<unsigned char>((val >> 8) & 0xFF),
 				static_cast<unsigned char>(val & 0xFF)
 			);
+        	} catch (...)
+        	{
+        		throw std::runtime_error("Invalid hex color: " + str);
+        	}
         }
     };
 

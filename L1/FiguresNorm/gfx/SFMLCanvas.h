@@ -19,30 +19,25 @@ public:
     }
 
     void MoveTo(double x, double y) override {
-        m_currentPos = {static_cast<float>(x), static_cast<float>(y)};
+        m_currentPos = V(x, y);
     }
 
     void LineTo(double x, double y) override {
-        sf::Vector2f end{static_cast<float>(x), static_cast<float>(y)};
+        sf::Vector2f end = V(x, y);
         m_lines.push_back({m_currentPos, end, m_currentColor});
         m_currentPos = end;
     }
 
     void DrawEllipse(double cx, double cy, double rx, double ry) override {
-        float maxR = std::max(static_cast<float>(rx), static_cast<float>(ry));
-        if (maxR <= 0) return;
-        m_ellipses.push_back({
-            static_cast<float>(cx), static_cast<float>(cy),
-            static_cast<float>(rx), static_cast<float>(ry),
-            m_currentColor
-        });
+    	float maxR = std::max(F(rx), F(ry));
+    	if (maxR <= 0) return;
+    	m_ellipses.push_back({F(cx), F(cy), F(rx), F(ry), m_currentColor});
     }
 
     void DrawText(double left, double top, double fontSize, const std::string& text) override {
-        m_texts.push_back({
-            static_cast<float>(left), static_cast<float>(top),
-            static_cast<unsigned>(fontSize), text, m_currentColor
-        });
+    	m_texts.push_back({F(left), F(top),
+						   static_cast<unsigned>(fontSize),
+						   text, m_currentColor});
     }
 
     void Render() {
@@ -82,6 +77,8 @@ public:
     }
 
 private:
+	static float F(double v) { return static_cast<float>(v); }
+	static sf::Vector2f V(double x, double y) { return {F(x), F(y)}; }
     sf::RenderWindow& m_window;
     sf::Font& m_font;
     sf::Vector2f m_currentPos;

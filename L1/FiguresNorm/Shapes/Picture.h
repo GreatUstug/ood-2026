@@ -10,6 +10,7 @@
 #include <string>
 #include <stdexcept>
 #include <algorithm>
+#include <unordered_map>
 
 namespace shapes
 {
@@ -79,7 +80,7 @@ public:
     	}
     }
 private:
-    std::map<std::string, std::unique_ptr<IFigure>> m_shapes;
+    std::unordered_map<std::string, std::unique_ptr<IFigure>> m_shapes;
     std::vector<std::string> m_order;
 };
 }
