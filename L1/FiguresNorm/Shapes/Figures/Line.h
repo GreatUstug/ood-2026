@@ -27,6 +27,12 @@ public:
 		canvas.MoveTo(m_x, m_y);
 		canvas.LineTo(m_xEnd, m_yEnd);
 	}
+	void Move(double dx, double dy) override {
+		m_x += dx;
+		m_y += dy;
+		m_xEnd += dx;
+		m_yEnd += dy;
+	}
 private:
 	double m_xEnd;
 	double m_yEnd;

@@ -22,6 +22,14 @@ public:
 			   std::to_string(m_x2) + " " + std::to_string(m_y2) + " " +
 			   std::to_string(m_x3) + " " + std::to_string(m_y3);
 	}
+	void Move(double dx, double dy) override {
+		m_x += dx;
+		m_y += dy;
+		m_x2 += dx;
+		m_y2 += dy;
+		m_x3 += dx;
+		m_y3 += dy;
+	}
 	void Draw(gfx::ICanvas& canvas) const override {
 		canvas.MoveTo(m_x, m_y);
 		canvas.LineTo(m_x2, m_y2);
