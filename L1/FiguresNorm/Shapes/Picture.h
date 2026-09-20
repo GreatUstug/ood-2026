@@ -1,6 +1,7 @@
 // Shapes/Picture.h
 #pragma once
-#include "Figures/IShape.h"
+#include "IFigure.h"
+#include "Figures/IShapeGeometry.h"
 #include "Figures/Circle.h"
 #include "Figures/Rectangle.h"
 #include "Figures/Triangle.h"
@@ -22,8 +23,10 @@ public:
         if (m_shapes.contains(params.id)) {
             throw std::runtime_error("Shape with this ID already exists");
         }
-        m_shapes[params.id] = CreateShape(params);
-        m_order.push_back(params.id); // Сохраняем порядок добавления
+    	auto geo = CreateShape(params);
+    	m_shapes[params.id] = std::make_unique<shapes::IFigure>(
+			params.id, params.color, std::move(geo));
+        m_order.push_back(params.id);
     }
 
     void MoveShape(const std::string& id, double dx, double dy) {
@@ -41,7 +44,6 @@ public:
     void DeleteShape(const std::string& id) {
         if (!m_shapes.contains(id)) throw std::runtime_error("Shape not found");
         m_shapes.erase(id);
-        // Удаляем ID из вектора порядка
         m_order.erase(std::remove(m_order.begin(), m_order.end(), id), m_order.end());
     }
 
@@ -51,13 +53,24 @@ public:
         it->second->SetColor(color);
     }
 
+	void ChangeShape(const std::string& id, const ShapeParams& params) {
+    	auto it = m_shapes.find(id);
+    	if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+
+    	ShapeParams p = params;
+    	p.id = id;
+    	p.color = it->second->GetColor();
+
+    	auto geo = CreateShape(p);
+    	it->second->SetGeometry(std::move(geo));
+    }
+
     std::vector<std::string> ListAllShapes() const {
         std::vector<std::string> result;
         int index = 1;
         for (const auto& id : m_order) {
             auto it = m_shapes.find(id);
             if (it != m_shapes.end()) {
-                // Формат: <номер> <тип> <id> <цвет> <параметры>
                 result.push_back(std::to_string(index++) + " " + it->second->GetInfo());
             }
         }
@@ -92,31 +105,31 @@ public:
     }
 
 private:
-    std::unique_ptr<IShape> CreateShape(const ShapeParams& params) {
+    std::unique_ptr<shapes::IShapeGeometry> CreateShape(const ShapeParams& params) {
         switch (params.type) {
             case ShapeType::CIRCLE: {
                 if (params.params.size() < 1) throw std::runtime_error("Circle needs radius");
-                return std::make_unique<Circle>(params.color, params.x, params.y, std::stod(params.params[0]));
+                return std::make_unique<shapes::Circle>(params.color, params.x, params.y, std::stod(params.params[0]));
             }
             case ShapeType::RECTANGLE: {
                 if (params.params.size() < 2) throw std::runtime_error("Rectangle needs width and height");
-                return std::make_unique<Rectangle>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Rectangle>(params.color, params.x, params.y,
                                                    std::stod(params.params[0]), std::stod(params.params[1]));
             }
             case ShapeType::TRIANGLE: {
                 if (params.params.size() < 4) throw std::runtime_error("Triangle needs 3 points");
-                return std::make_unique<Triangle>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Triangle>(params.color, params.x, params.y,
                                                   std::stod(params.params[0]), std::stod(params.params[1]),
                                                   std::stod(params.params[2]), std::stod(params.params[3]));
             }
             case ShapeType::LINE: {
                 if (params.params.size() < 2) throw std::runtime_error("Line needs end point");
-                return std::make_unique<Line>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Line>(params.color, params.x, params.y,
                                               std::stod(params.params[0]), std::stod(params.params[1]));
             }
             case ShapeType::TEXT: {
                 if (params.params.size() < 2) throw std::runtime_error("Text needs size and content");
-                return std::make_unique<Text>(params.color, params.x, params.y,
+                return std::make_unique<shapes::Text>(params.color, params.x, params.y,
                                               std::stod(params.params[0]), params.params[1]);
             }
             default:
@@ -124,6 +137,6 @@ private:
         }
     }
 
-    std::map<std::string, std::unique_ptr<IShape>> m_shapes;
+    std::map<std::string, std::unique_ptr<shapes::IFigure>> m_shapes;
     std::vector<std::string> m_order;
 };

@@ -4,11 +4,12 @@
 
 #ifndef FIGURES_LINE_H
 #define FIGURES_LINE_H
-#include "IShape.h"
+#include "IShapeGeometry.h"
 
 #include <string>
-
-class Line : public IShape
+namespace shapes
+{
+class Line : public IShapeGeometry
 {
 public:
 	Line(std::string color, double x, double y, double yEnd, double xEnd) : m_xEnd(xEnd), m_yEnd(yEnd)
@@ -32,4 +33,5 @@ private:
 	double m_xEnd;
 	double m_yEnd;
 };
+}
 #endif //FIGURES_LINE_H

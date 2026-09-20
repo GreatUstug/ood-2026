@@ -4,11 +4,14 @@
 
 #ifndef FIGURES_RECTANGLE_H
 #define FIGURES_RECTANGLE_H
-#include "IShape.h"
+#include "IShapeGeometry.h"
 
 #include <string>
 
-class Rectangle : public IShape
+
+namespace shapes
+{
+class Rectangle : public IShapeGeometry
 {
 public:
 	Rectangle(std::string color, double x, double y, double width, double height) : m_width(width), m_height(height)
@@ -36,4 +39,5 @@ private:
 	double m_width;
 	double m_height;
 };
+}
 #endif //FIGURES_RECTANGLE_H

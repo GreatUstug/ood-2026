@@ -4,11 +4,13 @@
 
 #ifndef FIGURES_CIRCLE_H
 #define FIGURES_CIRCLE_H
-#include "IShape.h"
+#include "IShapeGeometry.h"
 
-class Circle : public IShape
+namespace shapes
 {
-	public:
+class Circle : public IShapeGeometry
+{
+public:
 	Circle(std::string color, double x, double y, double radius) : m_radius(radius)
 	{
 		m_color = color;
@@ -25,8 +27,9 @@ class Circle : public IShape
 		canvas.SetColor(gfx::Color::Parse(m_color));
 		canvas.DrawEllipse(m_x, m_y, m_radius, m_radius);
 	}
-	private:
+private:
 	double m_radius;
 };
+}
 
 #endif //FIGURES_CIRCLE_H

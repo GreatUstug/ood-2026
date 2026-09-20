@@ -4,9 +4,11 @@
 
 #ifndef FIGURES_TEXT_H
 #define FIGURES_TEXT_H
-#include "IShape.h"
+#include "IShapeGeometry.h"
 
-class Text : public IShape
+namespace shapes
+{
+class Text : public IShapeGeometry
 {
 public:
 	Text(std::string color, double x, double y, double size, std::string text) : m_size(size), m_text(text)
@@ -29,4 +31,5 @@ private:
 	double m_size;
 	std::string m_text;
 };
+}
 #endif //FIGURES_TEXT_H

@@ -28,7 +28,8 @@ public:
                 else if (cmd == "DeleteShape") HandleDeleteShape(iss, out);
                 else if (cmd == "ChangeColor") HandleChangeColor(iss, out);
                 else if (cmd == "List") HandleList(out);
-                else if (cmd == "DrawPicture") m_picture.RenderToWindow(); // Ждет закрытия окна
+                else if (cmd == "DrawPicture") m_picture.RenderToWindow();
+                else if (cmd == "ChangeShape") HandleChangeShape(iss, out);
                 else if (cmd == "Exit") break;
                 else out << "Unknown command: " << cmd << "\n";
             } catch (const std::exception& e) {
@@ -86,6 +87,27 @@ private:
 
     void HandleList(std::ostream& out) {
         for (const auto& s : m_picture.ListAllShapes()) out << s << "\n";
+    }
+	void HandleChangeShape(std::istringstream& iss, std::ostream& out) {
+    	std::string id, typeStr;
+    	if (!(iss >> id >> typeStr))
+    		throw std::runtime_error("Invalid ChangeShape syntax");
+
+    	ShapeParams p;
+    	p.id = id;
+    	if (typeStr == "circle")         p.type = ShapeType::CIRCLE;
+    	else if (typeStr == "rectangle") p.type = ShapeType::RECTANGLE;
+    	else if (typeStr == "triangle")  p.type = ShapeType::TRIANGLE;
+    	else if (typeStr == "line")      p.type = ShapeType::LINE;
+    	else if (typeStr == "text")      p.type = ShapeType::TEXT;
+    	else throw std::runtime_error("Unknown type: " + typeStr);
+
+    	if (!(iss >> p.x >> p.y)) throw std::runtime_error("Missing coordinates");
+    	std::string param;
+    	while (iss >> param) p.params.push_back(param);
+
+    	m_picture.ChangeShape(id, p);
+    	out << "Changed: " << id << "\n";
     }
 };
 

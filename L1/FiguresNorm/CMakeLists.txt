@@ -31,7 +31,7 @@ FetchContent_MakeAvailable(SFML)
 add_executable(Figures main.cpp
         ShapesCommandHandler.h
         Shapes/Picture.h
-        Shapes/Figures/IShape.h
+        Shapes/Figures/IShapeGeometry.h
         ShapeParams.h
         Shapes/Figures/Circle.h
         Shapes/Figures/Rectangle.h
