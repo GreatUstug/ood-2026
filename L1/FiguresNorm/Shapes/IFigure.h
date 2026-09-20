@@ -33,7 +33,6 @@ public:
 	void Move(double dx, double dy) { m_geometry->Move(dx, dy); }
 
 	const std::string& GetId() const { return m_id; }
-	const std::string& GetColor() const { return m_colorStr; }
 
 	std::string GetInfo() const {
 		std::string geo = m_geometry->GetInfo();

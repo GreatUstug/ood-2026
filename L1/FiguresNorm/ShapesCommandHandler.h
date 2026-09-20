@@ -2,12 +2,20 @@
 #define FIGURES_SHAPESCOMMANDHANDLER_H
 #pragma once
 #include "Shapes/Picture.h"
+#include "Shapes/IFigure.h"
+#include "Shapes/Figures/Circle.h"
+#include "Shapes/Figures/Rectangle.h"
+#include "Shapes/Figures/Triangle.h"
+#include "Shapes/Figures/Line.h"
+#include "Shapes/Figures/Text.h"
+
 #include <iostream>
 #include <sstream>
 #include <functional>
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <memory>
 
 namespace CommandHandler {
 
@@ -47,36 +55,78 @@ public:
     }
 
 private:
-    void HandleDrawShape(std::istringstream& iss, std::ostream&) {
-        std::string id;
-        if (!(iss >> id)) throw std::runtime_error("Invalid DrawShape");
-        m_picture.DrawShape(id, m_canvas);
-        m_pump();
+    // --- Создание геометрии по строковому имени типа ---
+    // Единственное место, которое знает про конкретные фигуры.
+    std::unique_ptr<shapes::IShapeGeometry>
+    CreateGeometry(const std::string& typeName, const ShapeParams& p) {
+        if (typeName == "circle") {
+            if (p.params.empty()) throw std::runtime_error("Circle needs radius");
+            double r = std::stod(p.params[0]);
+            if (r < 0) throw std::runtime_error("Radius must be non-negative");
+            return std::make_unique<shapes::Circle>(p.x, p.y, r);
+        }
+        if (typeName == "rectangle") {
+            if (p.params.size() < 2) throw std::runtime_error("Rectangle needs width and height");
+            double w = std::stod(p.params[0]);
+            double h = std::stod(p.params[1]);
+            if (w < 0 || h < 0) throw std::runtime_error("Width and height must be non-negative");
+            return std::make_unique<shapes::Rectangle>(p.x, p.y, w, h);
+        }
+        if (typeName == "triangle") {
+            if (p.params.size() < 4) throw std::runtime_error("Triangle needs 3 points");
+            return std::make_unique<shapes::Triangle>(
+                p.x, p.y,
+                std::stod(p.params[0]), std::stod(p.params[1]),
+                std::stod(p.params[2]), std::stod(p.params[3]));
+        }
+        if (typeName == "line") {
+            if (p.params.size() < 2) throw std::runtime_error("Line needs end point");
+            return std::make_unique<shapes::Line>(
+                p.x, p.y,
+                std::stod(p.params[0]), std::stod(p.params[1]));
+        }
+        if (typeName == "text") {
+            if (p.params.size() < 2) throw std::runtime_error("Text needs size and content");
+            double size = std::stod(p.params[0]);
+            if (size < 0) throw std::runtime_error("Font size must be non-negative");
+            return std::make_unique<shapes::Text>(p.x, p.y, size, p.params[1]);
+        }
+        throw std::runtime_error("Unknown type: " + typeName);
     }
 
-    void HandleDrawPicture(std::ostream&) {
-        m_picture.DrawPicture(m_canvas);
-        m_pump();
-    }
+    // --- Команды ---
 
     void HandleAddShape(std::istringstream& iss, std::ostream& out) {
         ShapeParams p;
-        std::string typeStr;
-        if (!(iss >> p.id >> p.color >> typeStr))
+        if (!(iss >> p.id >> p.color >> p.type))
             throw std::runtime_error("Invalid AddShape syntax");
-
-        if (typeStr == "circle")         p.type = ShapeType::CIRCLE;
-        else if (typeStr == "rectangle") p.type = ShapeType::RECTANGLE;
-        else if (typeStr == "triangle")  p.type = ShapeType::TRIANGLE;
-        else if (typeStr == "line")      p.type = ShapeType::LINE;
-        else if (typeStr == "text")      p.type = ShapeType::TEXT;
-        else throw std::runtime_error("Unknown type: " + typeStr);
-
-        if (!(iss >> p.x >> p.y)) throw std::runtime_error("Missing coordinates");
+        if (!(iss >> p.x >> p.y))
+            throw std::runtime_error("Missing coordinates");
         p.params = GetParams(p.type, iss);
 
-        m_picture.AddShape(p);
+        auto geo = CreateGeometry(p.type, p);
+        auto figure = std::make_unique<shapes::IFigure>(
+            p.id, p.color, std::move(geo));
+
+        m_picture.AddShape(std::move(figure));
         out << "Added: " << p.id << "\n";
+    }
+
+    void HandleChangeShape(std::istringstream& iss, std::ostream& out) {
+        std::string id, typeName;
+        if (!(iss >> id >> typeName))
+            throw std::runtime_error("Invalid ChangeShape syntax");
+
+        ShapeParams p;
+        p.id = id;
+        p.type = typeName;
+        if (!(iss >> p.x >> p.y))
+            throw std::runtime_error("Missing coordinates");
+        p.params = GetParams(p.type, iss);
+
+        auto geo = CreateGeometry(p.type, p);
+        m_picture.ChangeShape(id, std::move(geo));
+        out << "Changed: " << id << "\n";
     }
 
     void HandleMoveShape(std::istringstream& iss, std::ostream&) {
@@ -107,30 +157,24 @@ private:
         for (const auto& s : m_picture.ListAllShapes()) out << s << "\n";
     }
 
-    void HandleChangeShape(std::istringstream& iss, std::ostream& out) {
-        std::string id, typeStr;
-        if (!(iss >> id >> typeStr))
-            throw std::runtime_error("Invalid ChangeShape syntax");
-
-        ShapeParams p;
-        p.id = id;
-        if (typeStr == "circle")         p.type = ShapeType::CIRCLE;
-        else if (typeStr == "rectangle") p.type = ShapeType::RECTANGLE;
-        else if (typeStr == "triangle")  p.type = ShapeType::TRIANGLE;
-        else if (typeStr == "line")      p.type = ShapeType::LINE;
-        else if (typeStr == "text")      p.type = ShapeType::TEXT;
-        else throw std::runtime_error("Unknown type: " + typeStr);
-
-        if (!(iss >> p.x >> p.y)) throw std::runtime_error("Missing coordinates");
-        p.params = GetParams(p.type, iss);
-
-        m_picture.ChangeShape(id, p);
-        out << "Changed: " << id << "\n";
+    void HandleDrawShape(std::istringstream& iss, std::ostream&) {
+        std::string id;
+        if (!(iss >> id)) throw std::runtime_error("Invalid DrawShape");
+        m_picture.DrawShape(id, m_canvas);
+        m_pump();
     }
 
-    std::vector<std::string> GetParams(const ShapeType& type, std::istringstream& iss) {
+    void HandleDrawPicture(std::ostream&) {
+        m_picture.DrawPicture(m_canvas);
+        m_pump();
+    }
+
+    // --- Разбор параметров: для text — до конца строки, для остальных — токены ---
+
+    std::vector<std::string> GetParams(const std::string& typeName,
+                                       std::istringstream& iss) {
         std::vector<std::string> params;
-        if (type == ShapeType::TEXT) {
+        if (typeName == "text") {
             std::string sizeStr, textLine;
             iss >> sizeStr;
             std::getline(iss, textLine);
@@ -149,5 +193,5 @@ private:
     std::function<bool()>  m_pump;
 };
 
-}
+} // namespace CommandHandler
 #endif //FIGURES_SHAPESCOMMANDHANDLER_H
