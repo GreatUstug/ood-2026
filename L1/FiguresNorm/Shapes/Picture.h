@@ -17,7 +17,9 @@
 #include <stdexcept>
 #include <algorithm>
 
-class Picture {
+namespace shapes
+{
+	class Picture {
 public:
     void AddShape(const ShapeParams& params) {
         if (m_shapes.contains(params.id)) {
@@ -105,7 +107,7 @@ public:
     }
 
 private:
-    std::unique_ptr<shapes::IShapeGeometry> CreateShape(const ShapeParams& params) {
+    std::unique_ptr<IShapeGeometry> CreateShape(const ShapeParams& params) {
         switch (params.type) {
             case ShapeType::CIRCLE: {
                 if (params.params.size() < 1) throw std::runtime_error("Circle needs radius");
@@ -137,6 +139,7 @@ private:
         }
     }
 
-    std::map<std::string, std::unique_ptr<shapes::IFigure>> m_shapes;
+    std::map<std::string, std::unique_ptr<IFigure>> m_shapes;
     std::vector<std::string> m_order;
 };
+}

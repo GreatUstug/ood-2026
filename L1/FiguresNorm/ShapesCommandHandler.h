@@ -8,12 +8,12 @@ namespace CommandHandler {
 
 class ShapesCommandHandler {
 public:
-    explicit ShapesCommandHandler(Picture& picture) : m_picture(picture) {}
+    explicit ShapesCommandHandler(shapes::Picture& picture) : m_picture(picture) {}
 
     void Execute(std::istream& in = std::cin, std::ostream& out = std::cout) {
         std::string line;
         out << "=== Shapes Console ===\n";
-        out << "Commands: AddShape, MoveShape, List, DrawPicture, Exit\n";
+        out << "Commands: AddShape, MoveShape, DeleteShape, ChangeColor, ChangeShape, List, DrawShape, DrawPicture, Exit\n";
 
         while (std::getline(in, line)) {
             if (line.empty()) continue;

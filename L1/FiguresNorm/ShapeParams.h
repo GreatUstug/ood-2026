@@ -14,10 +14,6 @@ enum class ShapeType {
 	TEXT
 };
 
-enum class HandlerCommands {
-	ADD_SHAPE,
-};
-
 struct ShapeParams
 {
 	ShapeType type;

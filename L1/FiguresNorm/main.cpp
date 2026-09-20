@@ -1,7 +1,7 @@
 #include "ShapesCommandHandler.h"
 
 int main() {
-	Picture picture;
+	shapes::Picture picture;
 	CommandHandler::ShapesCommandHandler handler(picture);
 	handler.Execute();
 	return 0;
