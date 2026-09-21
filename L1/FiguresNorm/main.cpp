@@ -1,5 +1,7 @@
 #include "ShapesCommandHandler.h"
 #include "gfx/SFMLCanvas.h"
+#include "Observer/ConsolePictureObserver.h"
+
 #include <SFML/Graphics.hpp>
 #include <stdexcept>
 
@@ -31,6 +33,8 @@ int main() {
 	};
 
 	shapes::Picture picture;
+	ConsolePictureObserver console(std::cout);
+	picture.AddObserver(&console);
 	CommandHandler::ShapesCommandHandler handler(picture, canvas, pump);
 	handler.Execute();
 

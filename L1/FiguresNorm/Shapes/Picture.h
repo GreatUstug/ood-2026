@@ -3,6 +3,7 @@
 #include "IFigure.h"
 #include "Figures/IShapeGeometry.h"
 #include "gfx/ICanvas.h"
+#include "Observer/IPictureObserver.h"
 
 #include <map>
 #include <memory>
@@ -14,13 +15,14 @@
 
 namespace shapes
 {
-	class Picture {
+	class Picture : public IFigureObserver	{
 public:
 		void AddShape(std::unique_ptr<IFigure> figure) {
 			const std::string id = figure->GetId();
 			if (m_shapes.contains(id)) {
 				throw std::runtime_error("Shape with this ID already exists");
 			}
+			figure->AddObserver(this);
 			m_order.push_back(id);
 			m_shapes[id] = std::move(figure);
 		}
@@ -39,8 +41,10 @@ public:
 
     void DeleteShape(const std::string& id) {
         if (!m_shapes.contains(id)) throw std::runtime_error("Shape not found");
+			m_shapes.find(id)->second->RemoveObserver(this);
         m_shapes.erase(id);
         m_order.erase(std::remove(m_order.begin(), m_order.end(), id), m_order.end());
+		NotifyPictureObservers();
     }
 
     void EditShapeColor(const std::string& id, const std::string& color) {
@@ -79,8 +83,17 @@ public:
     		if (it != m_shapes.end()) it->second->Draw(canvas);
     	}
     }
+		void AddObserver(IPictureObserver* observer)    { m_observers.AddObserver(observer); }
+		void RemoveObserver(IPictureObserver* observer) { m_observers.RemoveObserver(observer); }
+
 private:
+		void NotifyPictureObservers() {
+			m_observers.Notify([this](IPictureObserver* o) {
+				o->OnPictureChanged(*this);
+			});
+		}
     std::unordered_map<std::string, std::unique_ptr<IFigure>> m_shapes;
     std::vector<std::string> m_order;
+		ObserverList<IPictureObserver> m_observers;
 };
 }

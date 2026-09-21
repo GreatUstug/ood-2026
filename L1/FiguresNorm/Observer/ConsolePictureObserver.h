@@ -20,5 +20,3 @@ private:
 	std::ostream& m_out;
 };
 #endif //FIGURES_CONSOLEPICTUREOBSERVER_H
-
-#endif //FIGURES_CONSOLEPICTUREOBSERVER_H
