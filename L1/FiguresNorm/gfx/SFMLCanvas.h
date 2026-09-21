@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 
+
+//посмотреть по поводу буфера из сфмл
 class SFMLCanvas : public gfx::ICanvas {
 public:
     SFMLCanvas(sf::RenderWindow& window, sf::Font& font)

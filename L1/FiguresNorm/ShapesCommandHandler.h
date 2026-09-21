@@ -55,8 +55,6 @@ public:
     }
 
 private:
-    // --- Создание геометрии по строковому имени типа ---
-    // Единственное место, которое знает про конкретные фигуры.
     std::unique_ptr<shapes::IShapeGeometry>
     CreateGeometry(const std::string& typeName, const ShapeParams& p) {
         if (typeName == "circle") {
@@ -93,8 +91,6 @@ private:
         }
         throw std::runtime_error("Unknown type: " + typeName);
     }
-
-    // --- Команды ---
 
     void HandleAddShape(std::istringstream& iss, std::ostream& out) {
         ShapeParams p;
@@ -168,8 +164,6 @@ private:
         m_picture.DrawPicture(m_canvas);
         m_pump();
     }
-
-    // --- Разбор параметров: для text — до конца строки, для остальных — токены ---
 
     std::vector<std::string> GetParams(const std::string& typeName,
                                        std::istringstream& iss) {

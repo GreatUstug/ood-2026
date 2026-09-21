@@ -38,10 +38,12 @@ public:
 	}
 	virtual ~Triangle() = default;
 private:
-	double m_x2;
-	double m_y2;
-	double m_x3;
-	double m_y3;
+	double m_x = 0;
+	double m_y = 0;
+	double m_x2 = 0;
+	double m_y2 = 0;
+	double m_x3 = 0;
+	double m_y3 = 0;
 };
 }
 #endif //FIGURES_TRIANGLE_H

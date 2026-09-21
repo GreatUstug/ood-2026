@@ -16,6 +16,11 @@ public:
 		m_x = x;
 		m_y = y;
 	}
+	void Move(double x, double y)
+	{
+		m_x += x;
+		m_y += y;
+	}
 	virtual ~Circle() = default;
 	std::string GetInfo() const override {
 		return "circle " +
@@ -27,6 +32,8 @@ public:
 	}
 private:
 	double m_radius;
+	double m_x = 0;
+	double m_y = 0;
 };
 }
 

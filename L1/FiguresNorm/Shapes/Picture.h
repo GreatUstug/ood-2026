@@ -14,16 +14,17 @@
 
 namespace shapes
 {
+//форматирование поправить. типы ошибок. короче, поправить ошибки и вероятно вынести в отдельный метод
 	class Picture {
 public:
-		void AddShape(std::unique_ptr<IFigure> figure) {
-			const std::string id = figure->GetId();
-			if (m_shapes.contains(id)) {
-				throw std::runtime_error("Shape with this ID already exists");
-			}
-			m_order.push_back(id);
-			m_shapes[id] = std::move(figure);
+	void AddShape(std::unique_ptr<IFigure> figure) {
+		const std::string id = figure->GetId();
+		if (m_shapes.contains(id)) {
+			throw std::runtime_error("Shape with this ID already exists");
 		}
+		m_order.push_back(id);
+		m_shapes[id] = std::move(figure);
+	}
 
     void MoveShape(const std::string& id, double dx, double dy) {
         auto it = m_shapes.find(id);

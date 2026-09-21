@@ -19,6 +19,7 @@ public:
 		m_geometry = std::move(geometry);
 	}
 
+	//TODO: убрать дублирование данных, то есть парсить из строки в цвет
 	void SetColor(const std::string& color)
 	{
 		m_colorStr = color;

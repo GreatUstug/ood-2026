@@ -34,8 +34,10 @@ public:
 		m_yEnd += dy;
 	}
 private:
-	double m_xEnd;
-	double m_yEnd;
+	double m_x = 0;
+	double m_y = 0;
+	double m_xEnd = 0;
+	double m_yEnd = 0;
 };
 }
 #endif //FIGURES_LINE_H

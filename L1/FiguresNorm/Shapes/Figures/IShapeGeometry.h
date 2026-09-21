@@ -9,6 +9,8 @@
 
 #include <string>
 
+
+//TODO: сделать из абстрактного класса интерфейс. и убрать протектед поля
 namespace shapes
 {
 class IShapeGeometry
@@ -16,14 +18,8 @@ class IShapeGeometry
 public:
 	virtual ~IShapeGeometry() = default;
 	virtual std::string GetInfo() const = 0;
-	virtual void Move(double dx, double dy) {
-		m_x += dx;
-		m_y += dy;
-	};
+	virtual void Move(double dx, double dy) {};
 	virtual void Draw(gfx::ICanvas& canvas) const = 0;
-protected:
-	double m_x = 0;
-	double m_y = 0;
 };
 }
 
