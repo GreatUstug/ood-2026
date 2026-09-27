@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="13" type="long" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="DucksFunc" targetName="ducks_tests" />
+      <config projectName="DucksFunc" targetName="gmock_main" />
+      <config projectName="DucksFunc" targetName="gtest_main" />
+      <config projectName="DucksFunc" targetName="gtest" />
+      <config projectName="DucksFunc" targetName="gmock" />
+      <config projectName="DucksFunc" targetName="DucksFunc" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8efedbd6-93aa-4878-90b3-0e8e29aeeb6f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/.idea/editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/DanceBehavior.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/Duck.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/DuckConstructBehavior.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/DuckFunctions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/FlyBehavior.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/QuackBehavior.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/query/client-vscode/query.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/cache-v2-80d9ce612dcbed3a4fb7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/cmakeFiles-v1-339757d15a204d3ec9cd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/codemodel-v2-dc9c4836b8739ee571b8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/directory-.-Debug-b5805d5c08fd3d92def4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/directory-.-MinSizeRel-b5805d5c08fd3d92def4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/directory-.-RelWithDebInfo-b5805d5c08fd3d92def4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/directory-.-Release-b5805d5c08fd3d92def4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/index-2026-09-15T12-23-07-0235.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ALL_BUILD-Debug-7a350409401334c1f18d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ALL_BUILD-MinSizeRel-7a350409401334c1f18d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ALL_BUILD-RelWithDebInfo-7a350409401334c1f18d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ALL_BUILD-Release-7a350409401334c1f18d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-DucksFunc-Debug-3ad0626eb88626907dd2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-DucksFunc-MinSizeRel-abf47bc2994ca5984cc4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-DucksFunc-RelWithDebInfo-ec66b3ce39ffc923fd18.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-DucksFunc-Release-48c20a1d0bb7228ea5f6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ZERO_CHECK-Debug-c0c8da9e9b16fe00ad29.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ZERO_CHECK-MinSizeRel-c0c8da9e9b16fe00ad29.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ZERO_CHECK-RelWithDebInfo-c0c8da9e9b16fe00ad29.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/target-ZERO_CHECK-Release-c0c8da9e9b16fe00ad29.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/.cmake/api/v1/reply/toolchains-v1-defd9afc5cfb9e009440.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/ALL_BUILD.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/ALL_BUILD.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/01fdb03a5e843d5ec461172ff8534a30/generate.stamp.rule" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/CompilerIdC.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/CompilerIdC.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CMakeCCompilerId.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.exe.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/Cl.items.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/CompilerIdC.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/link.secondary.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/CompilerIdC.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdC/Debug/vcpkg.applocal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/CompilerIdCXX.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/CompilerIdCXX.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CMakeCXXCompilerId.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.exe.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/Cl.items.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/CompilerIdCXX.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.secondary.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/CompilerIdCXX.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/CompilerIdCXX/Debug/vcpkg.applocal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/VCTargetsPath.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/VCTargetsPath.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/VCTargetsPath/x64/Debug/VCTargetsPath.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/4.4.3/VCTargetsPath/x64/Debug/VCTargetsPath.tlog/VCTargetsPath.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/InstallScripts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/generate.stamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/generate.stamp.depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/CMakeFiles/generate.stamp.list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/Debug/DucksFunc.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/Debug/DucksFunc.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/.d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.exe.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.ilk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/Cl.items.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/CustomBuild.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/CustomBuild.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/CustomBuild.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/DucksFunc.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/Microsoft.Build.CPPTasks.CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/Microsoft.Build.CPPTasks.CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/link.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/link.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/link.secondary.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc.tlog/link.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc_MD.tlog/CL.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc_MD.tlog/Microsoft.Build.CPPTasks.CL.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/DucksFunc_MD.tlog/Microsoft.Build.CPPTasks.CL.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/main.cpp.module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/main.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/vc143.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.dir/Debug/vcpkg.applocal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/DucksFunc.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/ZERO_CHECK.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/ZERO_CHECK.vcxproj.filters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ALL_BUILD/ALL_BUILD.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ALL_BUILD/ALL_BUILD.tlog/ALL_BUILD.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ALL_BUILD/ALL_BUILD.tlog/CustomBuild.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ZERO_CHECK/ZERO_CHECK.recipe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.command.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.read.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ZERO_CHECK/ZERO_CHECK.tlog/CustomBuild.write.1.tlog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/build/x64/Debug/ZERO_CHECK/ZERO_CHECK.tlog/ZERO_CHECK.lastbuildstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DucksFunc/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FiguresNorm/ShapesCommandHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/../FiguresNorm/ShapesCommandHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FiguresNorm/Tests/FiguresTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../FiguresNorm/Tests/FiguresTest.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;GreatUstug&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GreatUstug/ood-2026.git&quot;,
+    &quot;accountId&quot;: &quot;76ca8e40-eefc-4f53-b5cd-7740472441b0&quot;
+  }
+}</component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="7pPpYjYn" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2025" />
+    <option name="minorVersion" value="3.3" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3JcmzLurukySNSfMiVV72IzgdIY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.DucksFunc.executor&quot;: &quot;Run&quot;,
+    &quot;CTest Application.All CTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Lab1&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Projects/OOD/L1/DucksFuncNorm/main.cpp&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="CTest Application.All CTest">
+    <configuration name="ducks_tests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DucksFunc" TARGET_NAME="ducks_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DucksFunc" RUN_TARGET_NAME="ducks_tests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DucksFunc" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DucksFunc" TARGET_NAME="DucksFunc" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="DucksFunc" RUN_TARGET_NAME="DucksFunc">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DucksFunc" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DucksFunc" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DucksFunc" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DucksFunc" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.DucksFunc" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="Google Test.ducks_tests" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8efedbd6-93aa-4878-90b3-0e8e29aeeb6f" name="Changes" comment="" />
+      <created>1789968991292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789968991292</updated>
+      <workItem from="1789968992627" duration="1373000" />
+      <workItem from="1789973039940" duration="114000" />
+      <workItem from="1789973958545" duration="661000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
