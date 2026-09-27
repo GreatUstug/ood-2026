@@ -39,7 +39,11 @@ add_executable(Figures main.cpp
         Shapes/Figures/Triangle.h
         Shapes/Figures/Text.h
         gfx/ICanvas.h
-        gfx/SFMLCanvas.h)
+        gfx/SFMLCanvas.h
+        Observer/IFigureObserver.h
+        Observer/IPictureObserver.h
+        Observer/ObserverList.h
+        Observer/ConsolePictureObserver.h)
 target_include_directories(Figures PRIVATE ${CMAKE_SOURCE_DIR})
 target_link_libraries(Figures PRIVATE
         sfml-graphics
