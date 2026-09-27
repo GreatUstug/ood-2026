@@ -18,7 +18,7 @@ namespace gfx {
         Color(unsigned char r = 0, unsigned char g = 0, unsigned char b = 0, unsigned char a = 255)
             : r(r), g(g), b(b), a(a) {}
 
-    	static Color Parse(const std::string& str) {
+    	static Color ParseToRGB(const std::string& str) {
         	if (str.empty() || str[0] != '#' || str.length() != 7) {
         		throw std::runtime_error("Invalid hex color (expected #RRGGBB): " + str);
         	}
@@ -34,6 +34,11 @@ namespace gfx {
         	{
         		throw std::runtime_error("Invalid hex color: " + str);
         	}
+        }
+    	std::string ParseToString() const {
+        	char buf[8];
+        	std::snprintf(buf, sizeof(buf), "#%02x%02x%02x", r, g, b);
+        	return buf;
         }
     };
 

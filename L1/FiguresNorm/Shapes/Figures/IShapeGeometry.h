@@ -9,8 +9,6 @@
 
 #include <string>
 
-
-//TODO: сделать из абстрактного класса интерфейс. и убрать протектед поля
 namespace shapes
 {
 class IShapeGeometry

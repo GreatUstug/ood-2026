@@ -14,13 +14,13 @@
 
 namespace shapes
 {
-//форматирование поправить. типы ошибок. короче, поправить ошибки и вероятно вынести в отдельный метод
+// TODO: форматирование поправить. типы ошибок. короче, поправить ошибки и вероятно вынести в отдельный метод
 	class Picture {
 public:
 	void AddShape(std::unique_ptr<IFigure> figure) {
 		const std::string id = figure->GetId();
 		if (m_shapes.contains(id)) {
-			throw std::runtime_error("Shape with this ID already exists");
+			throw std::invalid_argument("Shape with this ID already exists");
 		}
 		m_order.push_back(id);
 		m_shapes[id] = std::move(figure);
@@ -28,7 +28,7 @@ public:
 
     void MoveShape(const std::string& id, double dx, double dy) {
         auto it = m_shapes.find(id);
-        if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+        if (it == m_shapes.end()) throw std::invalid_argument("Shape not found. Move isn't avaiable");
         it->second->Move(dx, dy);
     }
 
@@ -39,20 +39,20 @@ public:
     }
 
     void DeleteShape(const std::string& id) {
-        if (!m_shapes.contains(id)) throw std::runtime_error("Shape not found");
+        if (!m_shapes.contains(id)) throw std::invalid_argument("Shape not found. Delete isn't available");
         m_shapes.erase(id);
         m_order.erase(std::remove(m_order.begin(), m_order.end(), id), m_order.end());
     }
 
     void EditShapeColor(const std::string& id, const std::string& color) {
         auto it = m_shapes.find(id);
-        if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+        if (it == m_shapes.end()) throw std::invalid_argument("Shape not found. ChangeColor isn't available");
         it->second->SetColor(color);
     }
 
 	void ChangeShape(const std::string& id, std::unique_ptr<IShapeGeometry> geometry) {
     	auto it = m_shapes.find(id);
-    	if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+    	if (it == m_shapes.end()) throw std::invalid_argument("Shape not found. ChangeShape isn't available");
     	it->second->SetGeometry(std::move(geometry));
     }
 
@@ -70,7 +70,7 @@ public:
 
 		void DrawShape(const std::string& id, gfx::ICanvas& canvas) const {
     	auto it = m_shapes.find(id);
-    	if (it == m_shapes.end()) throw std::runtime_error("Shape not found");
+    	if (it == m_shapes.end()) throw std::invalid_argument("Shape not found. DrawShape isn't available");
     	it->second->Draw(canvas);
     }
 
